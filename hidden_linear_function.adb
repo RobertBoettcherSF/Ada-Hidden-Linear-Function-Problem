@@ -215,7 +215,7 @@ package body Hidden_Linear_Function is
             if Verify_Hidden_Vector (A, b, Z) then
                return Z;
             end if;
-         end loop;
+         end;
       end loop;
 
       raise No_Solution;
