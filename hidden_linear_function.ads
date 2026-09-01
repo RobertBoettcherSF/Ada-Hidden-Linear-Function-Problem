@@ -31,8 +31,7 @@ package Hidden_Linear_Function is
       b : Bit_Vector; 
       x : Bit_Vector) return Mod_4
    with
-     Pre => Is_Valid_Problem (A, b) and then x'Length = A'Length (1),
-     Post => True;
+     Pre => Is_Valid_Problem (A, b) and then x'Length = A'Length (1);
 
    -- Variant 2: Subspace L_q membership test
    -- x in L_q if q(x xor y) = (q(x) + q(y)) mod 4 for all y
