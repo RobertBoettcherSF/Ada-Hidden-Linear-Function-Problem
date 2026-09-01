@@ -214,7 +214,9 @@ begin
       In_Lq := Is_In_Subspace_Lq (A_Full, B_Full, [1, 0]);
       Z_Res := Find_Hidden_Vector (A_Full, B_Full);
 
+      pragma Warnings (Off, "explicit membership test may be optimized away");
       Check ("14.1 End-to-end quadratic evaluation succeeds", Q_Res in Mod_4);
+      pragma Warnings (On, "explicit membership test may be optimized away");
       Check ("14.2 End-to-end subspace check succeeds", In_Lq or not In_Lq);
       Check ("14.3 End-to-end hidden vector found and verified", Verify_Hidden_Vector (A_Full, B_Full, Z_Res));
    end;
