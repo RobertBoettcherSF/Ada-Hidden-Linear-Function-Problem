@@ -86,7 +86,7 @@ package body Hidden_Linear_Function is
       end loop;
 
       declare
-         Q_Val : constant Integer := (2 * (Quad_Sum rem 2) + (Linear_Sum rem 2)) mod 4;
+         Q_Val : constant Integer := (2 * Quad_Sum + Linear_Sum) mod 4;
       begin
          return Mod_4 (Q_Val);
       end;
@@ -177,7 +177,7 @@ package body Hidden_Linear_Function is
                   end loop;
 
                   declare
-                     Expected : constant Integer := (2 * (Dot_Product rem 2)) mod 4;
+                     Expected : constant Integer := (2 * Dot_Product) mod 4;
                   begin
                      if Integer (Q_X) /= Expected then
                         return False;
@@ -215,7 +215,7 @@ package body Hidden_Linear_Function is
             if Verify_Hidden_Vector (A, b, Z) then
                return Z;
             end if;
-         end;
+         end loop;
       end loop;
 
       raise No_Solution;
