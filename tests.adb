@@ -143,8 +143,8 @@ begin
    Put_Line ("TEST 10 — Verify Hidden Vector (Incorrect Case)");
    declare
       A_Inst : constant Matrix (1 .. 2, 1 .. 2) := [[0, 0], [0, 0]];
-      B_Inst : constant Bit_Vector (1 .. 2) := [1, 1];
-      Z_Wrong : constant Bit_Vector (1 .. 2) := [0, 0];
+      B_Inst : constant Bit_Vector (1 .. 2) := [0, 0];
+      Z_Wrong : constant Bit_Vector (1 .. 2) := [1, 0];
       Result : Boolean := True;
    begin
       Result := Verify_Hidden_Vector (A_Inst, B_Inst, Z_Wrong);
